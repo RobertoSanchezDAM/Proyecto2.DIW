@@ -18,4 +18,4 @@ No funciona correctamente
 http://proyectohlccompleto.wuaze.com/
 
 GitHub
-https://github.com/RobertoSanchezDAM/
+https://github.com/RobertoSanchezDAM/ProyectoDIW.completo/
