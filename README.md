@@ -18,4 +18,4 @@ No funciona correctamente
 http://proyectohlccompleto.wuaze.com/
 
 GitHub
-https://github.com/lmargim/ProyectoHLC.completo
+https://github.com/RobertoSanchezDAM/
