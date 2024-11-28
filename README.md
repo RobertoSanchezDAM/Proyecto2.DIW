@@ -14,8 +14,5 @@ Menú Clientes → Luis
 
 Enlaces
 ----------------------------------------------------------------
-No funciona correctamente
-http://proyectohlccompleto.wuaze.com/
-
 GitHub
 https://github.com/RobertoSanchezDAM/ProyectoDIW.completo/
