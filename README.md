@@ -1,4 +1,4 @@
-# ProyectoDIW.completo
+# ProyectoDIW
 
 Integrantes
 ----------------------------------------------------------------
