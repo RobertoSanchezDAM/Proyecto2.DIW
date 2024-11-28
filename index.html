@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyages Machado - Travel agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link href="css/estilo.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar sticky-top navbar-expand-lg custom-nav-bg">
+        <div class="container-fluid mi-nav-bg">
+
+            <!-- LOGO Y TITULO -->
+            <a class="navbar-brand logo d-flex align-items-center" id="logo" href="./home.html">
+                <img src="images/logo.png" width="60" height="60" class="d-inline-block align-text-center me-3">
+                <div class="d-flex flex-column align-items-start">
+                    <div class="d-flex flex-column">
+                        <span class="titulo">Voyages Machado</span>
+                    </div>
+                    <div class="separador"></div>
+                    <span class="subtitulo">travel agency</span>
+                </div>
+            </a>
+            <!-- LOGO Y TITULO -->
+
+            <!-- BOTON RESOLUCION MOVIL -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- BOTON RESOLUCION MOVIL -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- ms-auto para que se centre en margen horizontal -->
+                <ul class="navbar-nav ms-auto" id="nav">
+                    <li class="nav-item dropdown ms-auto merriweather-italic">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Viajes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item merriweather-regular" id="mnuAñadirViaje" href="#">Añadir
+                                    viaje</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuBuscarViaje" href="#">Buscar un
+                                viaje</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListadoViajes" href="#">Listado de
+                                    viajes</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListarPaquetesPorViaje"
+                                    href="#">Listar paquetes de un viaje</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-auto merriweather-italic">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Paquetes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item merriweather-regular" id="mnuAñadirPaquete" href="#">Añadir
+                                    paquete</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuBuscarPaquete" href="#">Buscar un
+                                paquete</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListadoPaquetes" href="#">Listado
+                                de paquetes</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListarClientesPorPaquete"
+                                href="#">Listar clientes de un paquete</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown ms-auto merriweather-italic">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Clientes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item merriweather-regular" id="mnuAñadirCliente" href="#">Añadir
+                                    cliente</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuBuscarCliente" href="#">Buscar un
+                                    cliente</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListarClientes" href="#">Listado de
+                                    clientes</a></li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuAñadirPaquetesACliente"
+                                href="#">Añadir paquetes a cliente</a>
+                            </li>
+                            <li><a class="dropdown-item merriweather-regular" id="mnuListarPaquetesPorCliente"
+                            href="#">Listar paquetes de un cliente</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- ms-auto para que se ponga a la drch, d-none para que desaparezca y d-lg-block para que en resoluciones grandes sea visible -->
+                <a class="btn btn-outline-secondary ms-auto d-none d-lg-block" href="./home.html" type="submit">Home</a>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- FORMULARIO VIAJES -->
+    <div class="container mt-5">
+        <form name="frmViajes" id="frmViajes">
+            <fieldset id="form-viajes">
+                <legend>Añadir Viaje</legend>
+                <!-- ORIGEN Y DESTINO -->
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="txtOrigen" class="form-label">Origen</label>
+                        <input type="text" class="form-control" id="txtOrigen" name="txtOrigen" value="" required placeholder="Madrid">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtDestino" class="form-label">Destino</label>
+                        <input type="text" class="form-control" id="txtDestino" name="txtDestino" value="" required placeholder="Nueva york">
+                    </div>
+                </div>
+                <!-- IDA Y VUELTA -->
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="fechaFin" class="form-label">Fecha de Fin</label>
+                        <input type="date" class="form-control" id="fechaFin" name="fechaFin" required>
+                    </div>
+                </div>
+                <!-- Botón de envío -->
+                <div class="text-center mt-4">
+                    <button type="button" id="btnAñadirViaje" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- FORMULARIO VIAJES -->
+
+    <!-- FORMULARIO PAQUETES -->
+    <div class="container mt-5">
+        <form name="frmPaquetes" id="frmPaquetes">
+            <fieldset id="form-paquetes">
+                <legend>Añadir Paquete</legend>
+                
+                <!-- Nombre del Paquete -->
+                <div class="mb-3">
+                    <label for="nombrePaquete" class="form-label">Nombre del Paquete</label>
+                    <input type="text" class="form-control" id="nombrePaquete" name="nombrePaquete"
+                        placeholder="Introduce el nombre del paquete" required>
+                </div>
+                
+                <!-- Tipo de Paquete y Alojamiento -->
+                <div class="row mb-3">
+                    <!-- Tipo de Paquete -->
+                    <div class="col-6">
+                        <label for="tipoPaquete" class="form-label">Tipo de Paquete</label>
+                        <select class="form-select" id="tipoPaquete" name="tipoPaquete" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Relax">Relax</option>
+                            <option value="Cultural">Cultural</option>
+                            <option value="Romántico">Romántico</option>
+                            <option value="Familiar">Familiar</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Tipo de Alojamiento -->
+                    <div class="col-6">
+                        <label for="alojamiento" class="form-label">Tipo de Alojamiento</label>
+                        <select class="form-select" id="alojamiento" name="alojamiento" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Hotel 5 estrellas">Hotel 5 estrellas</option>
+                            <option value="Hotel 4 estrellas">Hotel 4 estrellas</option>
+                            <option value="Hostal">Hostal</option>
+                            <option value="Apartamento">Apartamento</option>
+                            <option value="Camping">Camping</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Fechas -->
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="fechaInicio" class="form-label">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="fechaInicio" name="fechaInicio" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="fechaFin" class="form-label">Fecha de Fin</label>
+                        <input type="date" class="form-control" id="fechaFin" name="fechaFin" required>
+                    </div>
+                </div>
+                
+                <!-- Transporte y Viajes -->
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label class="form-label">Transporte Incluido</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="transporteAereo" name="transporte" value="aéreo" required>
+                            <label class="form-check-label" for="transporteAereo">Aéreo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="transporteTerrestre" name="transporte" value="terrestre">
+                            <label class="form-check-label" for="transporteTerrestre">Terrestre</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="transporteMaritimo" name="transporte" value="marítimo">
+                            <label class="form-check-label" for="transporteMaritimo">Marítimo</label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-6">
+                        <label for="lstViajes" class="form-label">Selecciona un Viaje</label>
+                        <select class="form-select" name="lstViajes" id="lstViajes" required>
+                            
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Botón de Envío -->
+                <div class="text-center mt-4">
+                    <button type="button" id="btnAñadirPaquete" class="btn btn-personalizado">
+                        <i class="bi bi-plus"></i>
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- FORMULARIO PAQUETES -->
+
+    <!-- FORMULARIO CLIENTE -->
+    <div class="container mt-5  mb-5">
+        <form name="frmClientes" id="frmClientes">
+            <fieldset id="form-cliente">
+                <legend>Añadir Cliente</legend>
+                <!-- Nombre y DNI -->
+                <div class="mb-3">
+                    <div class="row">
+                        <!-- Nombre -->
+                        <div class="col-lg-6">
+                            <label for="txtnombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="txtnombre"
+                                placeholder="Introduce tu nombre completo" required>
+                        </div>
+                        <!-- DNI -->
+                        <div class="col-lg-6">
+                            <label for="txtdni" class="form-label">DNI</label>
+                            <input type="text" class="form-control" id="txtdni" placeholder="12345678A" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- Correo Electrónico -->
+                <div class="mb-3">
+                    <label for="txtcuerpocorreo" class="form-label">Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="txtcuerpocorreo" placeholder="ejemplo">
+                        <div class="input-group-text">@</div>
+                        <input type="text" class="form-control" id="txtextensioncorreo" placeholder="ejemplo.com">
+                    </div>
+                </div>
+                <!-- Teléfono -->
+                <div class="mb-3">
+                    <label for="txttelefono" class="form-label">Teléfono</label>
+                    <div class="row">
+                        <div class="col-4">
+                            <select class="form-select" id="txtextensiontelefono">
+                                <optgroup label="Extensiones Telefónicas">
+                                    <option value="+34">+34 España</option>
+                                    <option value="+1">+1 Estados Unidos y Canadá</option>
+                                    <option value="+52">+52 México</option>
+                                    <option value="+54">+54 Argentina</option>
+                                    <option value="+55">+55 Brasil</option>
+                                    <option value="+44">+44 Reino Unido</option>
+                                    <option value="+49">+49 Alemania</option>
+                                    <option value="+81">+81 Japón</option>
+                                    <option value="+86">+86 China</option>
+                                    <option value="+91">+91 India</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-8">
+                            <input type="number" class="form-control" id="txttelefono" placeholder="625123456" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dirección -->
+                <div class="mb-3">
+                    <label for="txtdireccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="txtdireccion"
+                        placeholder="Calle, número, ciudad, código postal" required>
+                </div>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnAñadirCliente" type="button" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- FORMULARIO CLIENTE -->
+
+    <!-- BUSCAR CLIENTE POR DNI -->
+    <div class="container mt-5">
+        <form name="frmBuscarCliente" id="frmBuscarCliente">
+            <fieldset id="form-viajes">
+                <legend>Buscar cliente</legend>
+                <!-- DNI -->
+                <label for="txtdniBuscarCliente" class="form-label">DNI</label>
+                <input type="text" class="form-control" id="txtdniBuscarCliente" placeholder="12345678A" required>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnBuscarCliente" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- BUSCAR CLIENTE POR DNI -->
+
+    <!-- BUSCAR PAQUETE POR ID -->
+    <div class="container mt-5">
+        <form name="frmBuscarPaquete" id="frmBuscarPaquete">
+            <fieldset id="form-paquetes">
+                <legend>Buscar paquete</legend>
+                <!-- DNI -->
+                <label for="txtidBuscarPaquete" class="form-label">Id del Paquete</label>
+                <input type="text" class="form-control" id="txtidBuscarPaquete" placeholder="Por ej: 1" required>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnBuscarPaquete" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- BUSCAR PAQUETE POR ID -->
+
+    <!-- BUSCAR VIAJE POR ID -->
+    <div class="container mt-5">
+        <form name="frmBuscarViaje" id="frmBuscarViaje">
+            <fieldset id="form-viajes">
+                <legend>Buscar viaje</legend>
+                <!-- DNI -->
+                <label for="txtidBuscarViaje" class="form-label">Id del Viaje</label>
+                <input type="text" class="form-control" id="txtidBuscarViaje" placeholder="Por ej: 1" required>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnBuscarViaje" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- BUSCAR VIAJE POR ID -->
+
+    <!-- LISTAR PAQUETES POR CLIENTE(DNI) -->
+    <!-- AÑADIR PAQUETES A UN CLIENTE -->
+    <div class="container mt-5">
+        <form name="frmAñadirPaquetesACliente" id="frmAñadirPaquetesACliente">
+            <fieldset id="form-viajes">
+                <legend>Seleccionar Cliente</legend>
+                <!-- DNI y NOMBRE  y BOTON BUSCAR-->
+                <div class="row">
+                    <!-- DNI -->
+                    <div class="col-lg-5">
+                        <label for="txtdniPaquetesPorCliente" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="txtdniañadirpaquetesacliente"
+                            placeholder="12345678A" required>
+                    </div>
+                    <!-- Nombre -->
+                    <div class="col-lg-5">
+                        <label for="txtnombrePaquetesPorCliente" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="txtnombreañadirpaquetesacliente" required
+                            disabled="disabled">
+                    </div>
+                    <!-- Botón Buscar -->
+                    <div class="col-lg-2 text-center mt-4">
+                        <button type="button" id="btnBuscarCliente" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="datosPaquetes">
+                <legend>Seleccionar Paquete</legend>
+                <select class="form-select" name="lstPaquetes" id="lstPaquetes">
+                
+                </select>
+                <!-- Botón Añadir Paquete a Cliente -->
+                <div class="text-center mt-4">
+                    <button type="button" id="btnAñadirPaqueteACliente" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-plus"></i></button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <!-- AÑADIR PAQUETES A UN CLIENTE -->
+    <!-- BUSCAR CLIENTE PARA MOSTRAR PAQUETES -->
+    <div class="container mt-5">
+        <form name="frmBuscarClienteParaPaquetes" id="frmBuscarClienteParaPaquetes">
+            <fieldset>
+                <legend>Selecciona cliente para ver sus paquetes</legend>
+                <!-- DNI -->
+                <label for="txtdniBuscarClienteParaPaquetes" class="form-label">DNI</label>
+                <input type="text" class="form-control" id="txtdniBuscarClienteParaPaquetes" placeholder="12345678A"
+                    required>
+                <!-- Botón Añadir -->
+                <div class="text-center mt-4">
+                    <button id="btnBuscarClienteParaPaquetes" type="submit" class="btn btn-personalizado"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- BUSCAR CLIENTE PARA MOSTRAR PAQUETES -->
+    <!-- LISTAR PAQUETES POR CLIENTE(DNI) -->
+
+    <!-- LISTAR CLIENTE POR PAQUETE -->
+    <div class="container mt-5">
+        <form name="frmListarClientesPorPaquete" id="frmListarClientesPorPaquete">
+            <fieldset id="form-viajes">
+                <legend>Buscar clientes de un paquete</legend>
+                <div class="row">
+                    <!-- ID -->
+                    <div class="col">
+                        <label for="lstPaquetesClientes" class="form-label">Selecciona un Paquete</label>
+                        <select class="form-select" name="lstPaquetesClientes" id="lstPaquetesClientes" required>
+                            
+                        </select>
+                    </div>
+                    <!-- Botón Buscar -->
+                    <div class="col-lg-2 text-center mt-4">
+                        <button type="button" id="btnBuscarClientePorPaquete" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="datosClientes">
+                <legend>Clientes</legend>
+                <select class="form-select" name="lstClientePorPaquete" id="lstClientePorPaquete">
+                    
+                </select>
+            </fieldset>
+        </form>
+    </div>
+    <!-- LISTAR CLIENTE POR PAQUETE -->
+
+    <!-- LISTAR PAQUETES POR VIAJE -->
+    <div class="container mt-5">
+        <form name="frmListarPaquetesPorViaje" id="frmListarPaquetesPorViaje">
+            <fieldset id="form-paquetesViaje">
+                <legend>Buscar paquetes de un viaje</legend>
+                <div class="row">
+                    <!-- ID -->
+                    <div class="col">
+                        <label for="lstPaquetesViaje" class="form-label">Selecciona un Paquete</label>
+                        <select class="form-select" name="lstPaquetesViaje" id="lstPaquetesViaje" required>
+                            
+                        </select>
+                    </div>
+                    <!-- Botón Buscar -->
+                    <div class="col-lg-2 text-center mt-4">
+                        <button type="button" id="btnBuscarPaquetesPorViaje" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset id="datosPaquetesViaje">
+                <legend>Paquetes</legend>
+                <select class="form-select" name="lstPaquetesPorViaje" id="lstPaquetesPorViaje">
+                    
+                </select>
+            </fieldset>
+        </form>
+    </div>
+    <!-- LISTAR PAQUETES POR VIAJE -->
+
+    <!-- MODIFICAR VIAJE -->
+    <div class="modal fade" id="divModalModificarViaje" tabindex="-1" aria-labelledby="divModalModificarViaje">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <legend>Modificar viaje</legend>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <form name="frmModificarViaje" id="frmModificarViaje">
+                            <fieldset id="form-viajesMod">
+                                <legend>Añadir Viaje</legend>
+                                <!-- ID -->
+                                <div class="mb-3">
+                                    <label for="idModificarViaje" class="form-label">Id del Viaje</label>
+                                    <input type="text" class="form-control" id="idModificarViaje" required disabled="disabled">
+                                </div>
+                                <!-- ORIGEN Y DESTINO -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="txtOrigenMod" class="form-label">Origen</label>
+                                        <input type="text" class="form-control" id="txtOrigenMod" name="txtOrigenMod" value="" required placeholder="Madrid">
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="txtDestinoMod" class="form-label">Destino</label>
+                                        <input type="text" class="form-control" id="txtDestinoMod" name="txtDestinoMod" value="" required placeholder="Nueva york">
+                                    </div>
+                                </div>
+                                <!-- IDA Y VUELTA -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="fechaInicioMod" class="form-label">Fecha de Inicio</label>
+                                        <input type="date" class="form-control" id="fechaInicioMod" name="fechaInicioMod" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="fechaFinMod" class="form-label">Fecha de Fin</label>
+                                        <input type="date" class="form-control" id="fechaFinMod" name="fechaFinMod" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Botón Añadir -->
+                    <div class="text-center mt-4">
+                        <button id="btnAñadirCambiosViaje" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-floppy"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODIFICAR VIAJE -->
+
+    <!-- MODIFICAR CLIENTE -->
+    <div class="modal fade" id="divModalModificarCliente" tabindex="-1" aria-labelledby="divModalModificarCliente">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <legend>Modificar cliente</legend>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <form name="frmModificarCliente" id="frmModificarCliente">
+                            <fieldset id="form-ModificarCliente">
+
+                                <!-- Nombre y DNI -->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <!-- Nombre -->
+                                        <div class="col-lg-6">
+                                            <label for="txtnombreModificarCliente" class="form-label">Nombre</label>
+                                            <input type="text" class="form-control" id="txtnombreModificarCliente"
+                                                placeholder="Introduce tu nombre completo" required>
+                                        </div>
+                                        <!-- DNI -->
+                                        <div class="col-lg-6">
+                                            <label for="txtdniModificarCliente" class="form-label">DNI</label>
+                                            <input type="text" class="form-control" id="txtdniModificarCliente"
+                                                placeholder="12345678A" required disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Correo Electrónico -->
+                                <div class="mb-3">
+                                    <label for="txtcuerpocorreoModificarCliente" class="form-label">Email</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="txtcuerpocorreoModificarCliente"
+                                            placeholder="ejemplo">
+                                        <div class="input-group-text">@</div>
+                                        <input type="text" class="form-control" id="txtextensioncorreoModificarCliente"
+                                            placeholder="ejemplo.com">
+                                    </div>
+                                </div>
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+                                    <label for="txttelefonoModificarCliente" class="form-label">Teléfono</label>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <select class="form-select" id="txtextensiontelefonoModificarCliente">
+                                                <optgroup label="Extensiones Telefónicas">
+                                                    <option value="+34">+34 España</option>
+                                                    <option value="+1">+1 Estados Unidos y Canadá</option>
+                                                    <option value="+52">+52 México</option>
+                                                    <option value="+54">+54 Argentina</option>
+                                                    <option value="+55">+55 Brasil</option>
+                                                    <option value="+44">+44 Reino Unido</option>
+                                                    <option value="+49">+49 Alemania</option>
+                                                    <option value="+81">+81 Japón</option>
+                                                    <option value="+86">+86 China</option>
+                                                    <option value="+91">+91 India</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="number" class="form-control" id="txttelefonoModificarCliente"
+                                                placeholder="625123456" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Dirección -->
+                                <div class="mb-3">
+                                    <label for="txtdireccionModificarCliente" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="txtdireccionModificarCliente"
+                                        placeholder="Calle, número, ciudad, código postal" required>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Botón Añadir -->
+                    <div class="text-center mt-4">
+                        <button id="btnAñadirCambiosCliente" type="submit" class="btn btn-personalizado"><i
+                                class="bi bi-floppy"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODIFICAR CLIENTE -->
+
+    <!-- MODIFICAR PAQUETE -->
+    <div class="modal fade" id="divModalModificarPaquete" tabindex="-1" aria-labelledby="divModalModificarPaquete">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <legend>Modificar paquete</legend>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <form name="frmModificarPaquete" id="frmModificarPaquete">
+                            <fieldset id="form-ModificarPaquete">
+                                <div class="mb-3">
+                                    <label for="idModificarPaquete" class="form-label">Id del Paquete</label>
+                                    <input type="text" class="form-control" id="idModificarPaquete" required disabled="disabled">
+                                </div>
+                                <!-- Nombre del Paquete -->
+                                <div class="mb-3">
+                                    <label for="nombreModificarPaquete" class="form-label">Nombre del Paquete</label>
+                                    <input type="text" class="form-control" id="nombreModificarPaquete" placeholder="Introduce el nombre del paquete" required>
+                                </div>
+    
+                                <!-- Tipo de Paquete -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="tipoModificarPaquete" class="form-label">Tipo de Paquete</label>
+                                        <select class="form-select" id="tipoModificarPaquete" name="tipoModificarPaquete" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="Aventura">Aventura</option>
+                                            <option value="Relax">Relax</option>
+                                            <option value="Cultural">Cultural</option>
+                                            <option value="Romántico">Romántico</option>
+                                            <option value="Familiar">Familiar</option>
+                                        </select>
+                                    </div>
+    
+                                    <!-- Tipo de Alojamiento -->
+                                    <div class="col-6">
+                                        <label for="alojamientoModificarPaquete" class="form-label">Tipo de Alojamiento</label>
+                                        <select class="form-select" id="alojamientoModificarPaquete" name="alojamientoModificarPaquete" required>
+                                            <option value="">Selecciona una opción</option>
+                                            <option value="Hotel 5 estrellas">Hotel 5 estrellas</option>
+                                            <option value="Hotel 4 estrellas">Hotel 4 estrellas</option>
+                                            <option value="Hostal">Hostal</option>
+                                            <option value="Apartamento">Apartamento</option>
+                                            <option value="Camping">Camping</option>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <!-- Fechas -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="fechaInicioModificarPaquete" class="form-label">Fecha de Inicio</label>
+                                        <input type="date" class="form-control" id="fechaInicioModificarPaquete" name="fechaInicioModificarPaquete" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="fechaFinModificarPaquete" class="form-label">Fecha de Fin</label>
+                                        <input type="date" class="form-control" id="fechaFinModificarPaquete" name="fechaFinModificarPaquete" required>
+                                    </div>
+                                </div>
+    
+                                <!-- Transporte Incluido -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label class="form-label">Transporte Incluido: </label><br>
+                
+                                        <input class="form-check-input" type="radio" id="transporteAereo" name="transporteModificado" value="aéreo">
+                                        <label class="form-check-label" for="transporteAereo">Aéreo</label>
+
+                                        <input class="form-check-input" type="radio" id="transporteTerrestre" name="transporteModificado" value="terrestre">
+                                        <label class="form-check-label" for="transporteTerrestre">Terrestre</label><br>
+
+                                        <input class="form-check-input" type="radio" id="transporteMaritimo" name="transporteModificado" value="marítimo">
+                                        <label class="form-check-label" for="transporteMaritimo">Marítimo</label>
+                                    </div>
+                                    
+    
+                                    <!-- ID del Viaje -->
+                                    <div class="col-6">
+                                        <label for="lstModificarViajes" class="form-label">Selecciona un Viaje</label>
+                                        <select class="form-select" name="lstModificarViajes" id="lstModificarViajes" required>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="modal-footer">
+                    <!-- Botón Añadir Cambios -->
+                    <div class="text-center mt-4">
+                        <button id="btnAñadirCambiosPaquete" type="submit" class="btn btn-personalizado">
+                            <i class="bi bi-floppy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- MODIFICAR PAQUETE -->
+
+    <!-- DIV VACIOS PARA MOSTRAR BUSQUEDAS -->
+    <div class="container table-container" id="resultadoBusqueda"></div>
+    <div class="container table-container" id="listados"></div>
+    <!-- DIV VACIOS PARA MOSTRAR BUSQUEDAS -->
+
+    <!-- <script type="text/javascript" src="js/script.js"></script> -->
+    <script type="text/javascript" src="js/objetos.js"></script>
+    <script type="text/javascript" src="js/codigo.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+
+</body>
+
+</html>
